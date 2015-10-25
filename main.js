@@ -1,139 +1,168 @@
+//Global Variables
 var inputValues = [];
 var answer;
-var displayArea = document.getElementById('displayArea')
+var displayArea = document.getElementById('displayArea');
 var inputDisplay;
-
+var clearSelect = document.getElementById('clear');
+var sevenSelect = document.getElementById('seven');
+var eightSelect = document.getElementById('eight');
+var nineSelect = document.getElementById('nine');
+var divideSelect = document.getElementById('divide');
+var fourSelect = document.getElementById('four');
+var fiveSelect = document.getElementById('five');
+var sixSelect = document.getElementById('six');
+var multiplySelect = document.getElementById('multiply');
+var oneSelect = document.getElementById('one');
+var twoSelect = document.getElementById('two');
+var threeSelect = document.getElementById('three');
+var subtractSelect = document.getElementById('subtract');
+var zeroSelect = document.getElementById('zero');
+var decimalSelect = document.getElementById('decimal');
+var equalSelect = document.getElementById('equal');
+var addSelect = document.getElementById('add');
 var displayReturn = function(){
-  inputDisplay = inputValues.join(" ");
+  inputDisplay = inputValues.join("");
   return inputDisplay;
-}
+};
+var handlerSelect;
+var backgroundHandler = function(){
+  handlerSelect.style.background = 'rgba(104, 178, 91, 0.7)';
+  setTimeout(function(){
+  handlerSelect.style.background = '#68B25B';
+},100);
+};
+
+var colorHandler = function(){
+  handlerSelect.style.color = 'white';
+  setTimeout(function(){
+  handlerSelect.style.color = 'black';
+},100);
+};
 
 
 ///Clear Button
-document.getElementById('clear').addEventListener('click', function(){
-  displayArea.innerText = 0
+clearSelect.addEventListener('click', function(){
+  displayArea.innerText = 0;
   return inputValues = [];
 });
 
 ///Row Two Buttons Functions
-document.getElementById('seven').addEventListener('click', function(){
-  displayReturn();
-  displayArea.innerText = inputDisplay
-  return inputValues.push(7);
+sevenSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(7));
+  displayArea.innerText = inputDisplay;
+  handlerSelect = sevenSelect;
+  backgroundHandler();
 });
 
-document.getElementById('eight').addEventListener('click', function(){
-  displayReturn();
+eightSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(8));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(8);
+  handlerSelect = eightSelect;
+  backgroundHandler();
 });
 
-document.getElementById('nine').addEventListener('click', function(){
-  displayReturn();
+nineSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(9));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(9);
+  handlerSelect = nineSelect;
+  backgroundHandler();
 });
 
-document.getElementById('divide').addEventListener('click', function(){
-  displayReturn();
+divideSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push("/"));
   displayArea.innerText = inputDisplay;
-  return inputValues.push("/");
+  handlerSelect = divideSelect;
+  colorHandler();
 });
 
 ///Row Three Buttons Functions
-document.getElementById('four').addEventListener('click', function(){
-  displayReturn();
+fourSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(4));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(4);
+  handlerSelect = fourSelect;
+  backgroundHandler();
 });
 
-document.getElementById('five').addEventListener('click', function(){
-  displayReturn();
+fiveSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(5));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(5);
+  handlerSelect = fiveSelect;
+  backgroundHandler();
+});
+sixSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(6));
+  displayArea.innerText = inputDisplay;
+  handlerSelect = sixSelect;
+  backgroundHandler();
 });
 
-document.getElementById('six').addEventListener('click', function(){
-  displayReturn();
+multiplySelect.addEventListener('click', function(){
+  displayReturn(inputValues.push("*"));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(6);
-});
-
-document.getElementById('multiply').addEventListener('click', function(){
-  displayReturn();
-  displayArea.innerText = inputDisplay;
-  return inputValues.push("*");
-});
-
-///Row Four Buttons Functions
-document.getElementById('one').addEventListener('click', function(){
-  displayReturn();
-  displayArea.innerText = inputDisplay;
-  return inputValues.push(1);
-});
-
-document.getElementById('two').addEventListener('click', function(){
-  displayReturn();
-  displayArea.innerText = inputDisplay;
-  return inputValues.push(2);
-});
-
-document.getElementById('three').addEventListener('click', function(){
-  displayReturn();
-  displayArea.innerText = inputDisplay;
-  return inputValues.push(3);
-});
-
-document.getElementById('subtract').addEventListener('click', function(){
-  displayReturn();
-  displayArea.innerText = inputDisplay;
-  return inputValues.push("-");
+  handlerSelect = multiplySelect;
+  colorHandler();
 });
 
 ///Row Four Buttons Functions
-document.getElementById('zero').addEventListener('click', function(){
-  displayReturn();
+oneSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(1));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(0);
+  handlerSelect = oneSelect;
+  backgroundHandler();
 });
 
-document.getElementById('decimal').addEventListener('click', function(){
-  displayReturn();
+twoSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(2));
   displayArea.innerText = inputDisplay;
-  return inputValues.push(".");
+  handlerSelect = twoSelect;
+  backgroundHandler();
+});
+
+threeSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(3));
+  displayArea.innerText = inputDisplay;
+  handlerSelect = threeSelect;
+  backgroundHandler();
+});
+
+subtractSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push("-"));
+  displayArea.innerText = inputDisplay;
+  handlerSelect = subtractSelect;
+  colorHandler();
+
+});
+
+///Row Four Buttons Functions
+zeroSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push(0));
+  displayArea.innerText = inputDisplay;
+  handlerSelect = zeroSelect;
+  backgroundHandler();
+});
+
+decimalSelect.addEventListener('click', function(){
+  displayReturn(inputValues.push("."));
+  displayArea.innerText = inputDisplay;
+  handlerSelect = decimalSelect;
+  backgroundHandler();
 });
 
 
 document.getElementById('add').addEventListener('click', function(){
-  displayReturn();
+  displayReturn(inputValues.push("+"));
   displayArea.innerHTML = inputDisplay;
-  return inputValues.push("+");
+  handlerSelect = addSelect;
+  colorHandler();
 });
 
 //The equal function. evals the array
 
 
-document.getElementById('equal').addEventListener('click', function(){
-  if(inputValues.length === 3){
-  answer = eval(inputValues[0] + inputValues[1] + inputValues[2]);
-  } else if (inputValues.length === 5){
-  answer = eval((inputValues[0] + inputValues[1] + inputValues[2]) + (inputValues[3] + inputValues[4]));
-  } else if(inputValues.length === 7){
-  answer = eval((inputValues[0] + inputValues[1] + inputValues[2]) + (inputValues[3] + inputValues[4]) +
-    (inputValues[5] + inputValues[6]));
-  } else if(inputValues.length === 9){
-  answer = eval((inputValues[0] + inputValues[1] + inputValues[2]) + (inputValues[3] + inputValues[4]) +
-    (inputValues[5] + inputValues[6]) + (inputValues[7] + inputValues[8]));
-  } else if(inputValues.length === 11){
-    answer = eval((inputValues[0] + inputValues[1] + inputValues[2]) + (inputValues[3] + inputValues[4]) +
-      (inputValues[5] + inputValues[6]) + (inputValues[7] + inputValues[8]) + (inputValues[9] + inputValues[10]));
-  } else if(inputValues.length === 12){
-      answer = eval((inputValues[0] + inputValues[1] + inputValues[2]) + (inputValues[3] + inputValues[4]) +
-        (inputValues[5] + inputValues[6]) + (inputValues[7] + inputValues[8]) + (inputValues[9] +
-          inputValues[10]) + (inputValues[11] + inputValues[12]));
-  } else {
-    displayArea.innerText = "Error";
-  }
+equalSelect.addEventListener('click', function(){
+    answer = eval(inputDisplay);
+    handlerSelect = equalSelect;
+    backgroundHandler();
 
     function emptyArray(){
       inputValues = [];
