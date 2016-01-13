@@ -1,4 +1,4 @@
-//Global Variables
+
 var inputValues = [];
 var answer;
 var displayArea = document.getElementById('displayArea');

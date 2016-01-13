@@ -114,13 +114,21 @@ addSelect.addEventListener('click', function(){
   colorHandler();
 });
 
+function equalError(){
+  try {
+    answer = eval(inputDisplay);
+  } catch (error) {
+    if(answer === undefined){
+      answer = "error";
+      return answer;
+    }
+  }
+}
+
 //The equal function. evals the array
-
-
 equalSelect.addEventListener('click', function(){
     handlerSelect = equalSelect;
     backgroundHandler();
-
     function emptyArray(){
       inputValues = [];
     }
@@ -128,16 +136,13 @@ equalSelect.addEventListener('click', function(){
     function lastAnswer(){
       inputValues.push(answer);
     }
-    try {
-      answer = eval(inputDisplay);
-    } catch (error) {
-      if(answer === undefined){
-        answer = "error";
-        return answer;
-      }
-    }
+
         emptyArray();
         lastAnswer();
+        equalError();
         displayArea.innerText = answer;
         return answer;
 });
+
+
+/// var digits = documents.getElementsByclassName('digit')

@@ -5,104 +5,188 @@
   color:white;
   background:#68B25B;
   height:2em;
-  border-top:1px solid #A9D4A3;
-  border-right:1px solid #A9D4A3;
-  border-left:none;
-  border-bottom:1px solid #A9D4A3;
   font-size: 2em;
-  @include span-columns(3);
-  margin:0;
+  @include span-columns(2.5);
+  margin:1% 0 1% 0;
+  border-bottom: 5px solid green;
 }
 
 @mixin buttonStyleCenter{
   color:white;
   background:#68B25B;
   height:2em;
-  border: 1px solid #A9D4A3;
   font-size: 2em;
-  @include span-columns(3);
-  margin:0;
+  @include span-columns(2.5);
+  margin:1% 0 1% 0;
+  border-bottom: 5px solid green;
 }
 
 @mixin buttonStyleRight{
   color:black;
   background:#85C07B;
   height:2em;
-  border:1px solid #A9D4A3;
-  border-right:1px solid #A9D4A3;
-  border-bottom:1px solid #A9D4A3;
   font-size: 2em;
-  @include span-columns(3.55);
-  margin:0;
+  @include span-columns(3.3);
+  margin:1% 0 1% 0;
+  border-bottom: 5px solid green;
 }
 
 *:focus{
   outline:none;
 }
 
+body{
+  background-color: #6d695c;
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+}
 main{
-  @include outer-container(50%);
+  @include outer-container(60%);
+  background-color:#A9D4A3;
+  border: 1px solid gray;
+  margin-top:25%;
+  padding-top:1%;
 }
 
 .rowOne{
   button{
     @include buttonStyleLeft;
+    margin:0;
+    @include shift(0.8);
+  }
+  button:focus{
+    border-bottom: 1px solid green;
   }
 
     div{
-    text-align: right;
-    padding: 3% 3% 0 0;
-    color:white;
-    background:#68B25B;
-    height:2em;
-    border: 1px solid #A9D4A3;
-    font-size:2em;
-    @include span-columns(9);
-    margin:0;
+      text-align: right;
+      padding: 3% 3% 0 0;
+      color:white;
+      background:#68B25B;
+      height:2em;
+      border: 1px solid #A9D4A3;
+      font-size:2em;
+      @include span-columns(7.4);
+      margin-left:3%;
+      box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+      border-left: 3px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
 
 .rowTwo{
   button:nth-child(1){
     @include buttonStyleLeft;
+    @include shift(0.8);
+  }
+  button:nth-child(1):focus{
+    border-bottom: 1px solid green;
   }
   button:nth-child(2){
     @include buttonStyleCenter;
   }
+  button:nth-child(2):focus{
+    border-bottom: 1px solid green;
+  }
   button:nth-child(3){
     @include buttonStyleCenter;
   }
+  button:nth-child(3):focus{
+    border-bottom: 1px solid green;
+  }
   button:nth-child(4){
     @include buttonStyleRight;
+  }
+  button:nth-child(4):focus{
+    border-bottom: 1px solid green;
   }
 }
 
 .rowThree{
   button:nth-child(1){
     @include buttonStyleLeft;
+    @include shift(0.8);
+  }
+  button:nth-child(1):focus{
+    border-bottom: 1px solid green;
   }
   button:nth-child(2){
     @include buttonStyleCenter;
   }
+  button:nth-child(2):focus{
+    border-bottom: 1px solid green;
+  }
   button:nth-child(3){
     @include buttonStyleCenter;
   }
+  button:nth-child(3):focus{
+    border-bottom: 1px solid green;
+  }
   button:nth-child(4){
     @include buttonStyleRight;
+  }
+  button:nth-child(4):focus{
+    border-bottom: 1px solid green;
   }
 }
 
 .rowFour{
   button:nth-child(1){
     @include buttonStyleLeft;
+    @include shift(0.8);
+  }
+  button:nth-child(1):focus{
+    border-bottom: 1px solid green;
   }
   button:nth-child(2){
     @include buttonStyleCenter;
   }
+  button:nth-child(2):focus{
+    border-bottom: 1px solid green;
+  }
   button:nth-child(3){
     @include buttonStyleCenter;
   }
+  button:nth-child(3):focus{
+    border-bottom: 1px solid green;
+  }
   button:nth-child(4){
     @include buttonStyleRight;
+  }
+  button:nth-child(4):focus{
+    border-bottom: 1px solid green;
+  }
+}
+
+.rowFive{
+  button:nth-child(1){
+    @include buttonStyleLeft;
+      @include shift(0.8);
+  }
+  button:nth-child(1):focus{
+    border-bottom: 1px solid green;
+  }
+  button:nth-child(2){
+    @include buttonStyleCenter;
+  }
+  button:nth-child(2):focus{
+    border-bottom: 1px solid green;
+  }
+  button:nth-child(3){
+    @include buttonStyleCenter;
+  }
+  button:nth-child(3):focus{
+    border-bottom: 1px solid green;
+  }
+  button:nth-child(4){
+    @include buttonStyleRight;
+  }
+  button:nth-child(4):focus{
+    border-bottom: 1px solid green;
   }
 }
