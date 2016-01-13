@@ -20,12 +20,44 @@ main {
   margin-right: auto;
   background-color: #A9D4A3;
   border: 1px solid gray;
-  margin-top: 25%;
+  margin-top: 15%;
   padding-top: 1%; }
   main::after {
     clear: both;
     content: "";
     display: table; }
+
+@media (max-width: 1700px) {
+  main {
+    margin-top: 20%; } }
+
+@media (max-width: 1400px) {
+  main {
+    margin-top: 25%; } }
+
+@media (max-width: 1200px) {
+  main {
+    margin-top: 30%; } }
+
+@media (max-width: 1000px) {
+  main {
+    margin-top: 35%; } }
+
+@media (max-width: 800px) {
+  main {
+    margin-top: 41%; } }
+
+@media (max-width: 600px) {
+  main {
+    margin-top: 54%; } }
+
+@media (max-width: 500px) {
+  main {
+    margin-top: 65%; } }
+
+@media (max-width: 400px) {
+  main {
+    margin-top: 50%; } }
 
 .rowOne button {
   color: white;
