@@ -29,19 +29,19 @@ main {
 
 @media (max-width: 1700px) {
   main {
-    margin-top: 20%; } }
+    margin-top: 17%; } }
 
 @media (max-width: 1400px) {
   main {
-    margin-top: 25%; } }
+    margin-top: 20%; } }
 
 @media (max-width: 1200px) {
   main {
-    margin-top: 30%; } }
+    margin-top: 25%; } }
 
 @media (max-width: 1000px) {
   main {
-    margin-top: 35%; } }
+    margin-top: 30%; } }
 
 @media (max-width: 800px) {
   main {
@@ -57,7 +57,7 @@ main {
 
 @media (max-width: 400px) {
   main {
-    margin-top: 50%; } }
+    margin-top: 85%; } }
 
 .rowOne button {
   color: white;
