@@ -114,7 +114,22 @@ addSelect.addEventListener('click', function(){
   colorHandler();
 });
 
-function equalError(){
+
+//The equal function. evals the array
+equalSelect.addEventListener('click', function(){
+  handlerSelect = equalSelect;
+  backgroundHandler();
+
+  //emptys inputValues
+  function emptyArray(){
+    inputValues = [];
+  }
+
+  //Pushes the answer back into inputValues
+  function lastAnswer(){
+    inputValues.push(answer);
+  }
+  
   try {
     answer = eval(inputDisplay);
   } catch (error) {
@@ -123,25 +138,11 @@ function equalError(){
       return answer;
     }
   }
-}
 
-//The equal function. evals the array
-equalSelect.addEventListener('click', function(){
-    handlerSelect = equalSelect;
-    backgroundHandler();
-    function emptyArray(){
-      inputValues = [];
-    }
-
-    function lastAnswer(){
-      inputValues.push(answer);
-    }
-
-        emptyArray();
-        lastAnswer();
-        equalError();
-        displayArea.innerText = answer;
-        return answer;
+  emptyArray();
+  lastAnswer();
+  displayArea.innerText = answer;
+  return answer;
 });
 
 
